@@ -1,0 +1,8 @@
+# User information
+user_info.txt
+
+# Database
+db.sqlite3
+
+# Virtual environment
+.venv/
