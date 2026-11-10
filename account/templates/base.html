@@ -12,7 +12,7 @@
         <span class="logo">Bookmarks</span>
         {% if request.user.is_authenticated %}
             <ul class="menu">
-                <li {%if section == "dashboar" %}class="selected"{% endif %}>
+                <li {%if section == "dashboard" %}class="selected"{% endif %}>
                     <a href="{% url "dashboard" %}">My dashboard</a>
                 </li>
                 <li {% if section == "images" %}class="selected"{% endif %}>
@@ -35,6 +35,16 @@
             {% endif %}
         </span>
     </div>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li class="{{ message.tags }}">
+                    {{ message|safe }}
+                    <a href="#" class="close">x</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
     <div id="content">
         {% block content %}
         {% endblock %}
