@@ -6,3 +6,10 @@ db.sqlite3
 
 # Virtual environment
 .venv/
+
+# Local dev SSL certs
+*.crt
+*.key
+*.pem
+
+.env
